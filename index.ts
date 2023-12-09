@@ -10,7 +10,7 @@ import { AnyAction } from "@wharfkit/session";
 console.info(`EOS session: ${session.actor}@${session.permission} [${publicKey}]`)
 console.info(`EVM address: ${convertToAddress(ACTOR)}`);
 
-const max = 50;
+const max = 30;
 const queue = new Queue({concurrency: 1});
 
 function generateActions(): AnyAction[] {
