@@ -12,6 +12,7 @@ console.info(`EVM address: ${convertToAddress(ACTOR)}`);
 
 const max = parseInt(process.env.MAX ?? "50");
 const queue = new Queue({concurrency: 1});
+if ( max === 0 ) process.exit(0);
 
 function generateActions(): AnyAction[] {
     const actions: AnyAction[] = [noop(session)]
