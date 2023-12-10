@@ -15,7 +15,7 @@ export const abi = parseAbi([
 ])
 
 export function convertFromAddress(address: `0x${string}`): Name  {
-    const value = new BN(address.replace(/^0xbbbbbbbbbbbbbbbbbbbbbbbb/, ""), 16)
+    const value = new BN(address.toLowerCase().replace(/^0xbbbbbbbbbbbbbbbbbbbbbbbb/, ""), 16)
     return new Name(new UInt64(value));
 }
 

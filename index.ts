@@ -4,7 +4,7 @@ import { ACTOR, publicKey, session } from "./src/config.js";
 import { inscribe, noop } from "./src/actions.js";
 import Queue from "p-queue";
 import { toTransactionId } from "./src/evm.js";
-import { convertToAddress } from "./src/evm.eos.js";
+import { convertFromAddress, convertToAddress } from "./src/evm.eos.js";
 import { AnyAction } from "@wharfkit/session";
 
 console.info(`EOS session: ${session.actor}@${session.permission} [${publicKey}]`)
