@@ -14,6 +14,7 @@
     "viem": "latest"
   },
   "devDependencies": {
+    "@types/bn.js": "latest",
     "bun-types": "latest",
     "typescript": "latest"
   }
