@@ -10,13 +10,10 @@
     "@wharfkit/session": "1.x",
     "@wharfkit/transact-plugin-cosigner": "1.x",
     "@wharfkit/wallet-plugin-privatekey": "1.x",
-    "bip39": "latest",
-    "ethers": "latest",
-    "p-queue": "^8.0.0",
+    "p-queue": "latest",
     "viem": "latest"
   },
   "devDependencies": {
-    "@types/bn.js": "^5.1.5",
     "bun-types": "latest",
     "typescript": "latest"
   }

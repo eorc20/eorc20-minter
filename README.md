@@ -4,12 +4,15 @@
 
 ```bash
 $ bun install
-$ bun run dev
+$ bun start
 ```
 
 ## `.env` settings
 
 ```bash
-MNEMONIC="<BIP39 - Mnemonic Code Words>"
-NODE_ENV=production # or development
+ACTOR="<EOS Native account>"
+PERMISSION=active
+PRIVATE_KEY=PVT_K1_...
+VERBOSE=true
+MAX=5
 ```
