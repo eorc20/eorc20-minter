@@ -1,6 +1,6 @@
 import { AnyAction, Session } from "@wharfkit/session"
 import { call, convertToAddress } from "./evm.eos.js"
-import { parseUnits } from "viem"
+import { Address, parseUnits, toHex } from "viem"
 
 export function mine(session: Session): AnyAction {
     return {
@@ -28,4 +28,9 @@ export function noop(session: Session): AnyAction {
 export function inscribe(session: Session): AnyAction {
     const valueHex = "0x646174613a2c7b2270223a22656f72633230222c226f70223a226d696e74222c227469636b223a22656f7373222c22616d74223a223130303030227d"
     return call(session, convertToAddress(session.actor.toString()), parseUnits("0", 0), valueHex)
+}
+
+export function transfer(session: Session, to: Address, amount: number|string): AnyAction {
+    const data = `data:,{"p":"eorc20","op":"transfer","tick":"eoss","amt":"${amount}"}`
+    return call(session, to, parseUnits("0.01", 18), toHex(data))
 }
