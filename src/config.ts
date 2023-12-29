@@ -10,11 +10,14 @@ export const PRIVATE_KEY = process.env.PRIVATE_KEY;
 export const VERBOSE = process.env.VERBOSE === "true";
 export const MAX = parseInt(process.env.MAX ?? "50");
 
+export const walletPlugin = new WalletPluginPrivateKey(process.env.PRIVATE_KEY);
+
 export const session = new Session({
     chain: Chains.EOS,
     actor: ACTOR,
     permission: PERMISSION,
-    walletPlugin: new WalletPluginPrivateKey(PRIVATE_KEY),
+    walletPlugin,
 })
 
 export const publicKey = session.walletPlugin.data.privateKey.toPublic().toString();
+

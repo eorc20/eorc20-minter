@@ -30,7 +30,7 @@ export function inscribe(session: Session): AnyAction {
     return call(session, convertToAddress(session.actor.toString()), parseUnits("0", 0), valueHex)
 }
 
-export function transfer(session: Session, to: Address, amount: number|string): AnyAction {
-    const data = `data:,{"p":"eorc20","op":"transfer","tick":"eoss","amt":"${amount}"}`
+export function transfer(session: Session, to: Address, amount: number|string, tick: string): AnyAction {
+    const data = `data:,{"p":"eorc20","op":"transfer","tick":"${tick}","amt":"${amount}"}`
     return call(session, to, parseUnits("0.01", 18), toHex(data))
 }
